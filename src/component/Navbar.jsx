@@ -14,13 +14,13 @@ function Navbar() {
   }
 
   return (
-    <nav className="flex justify-between items-center px-6 py-4 border-b-2 border-amber-500 bg-gradient-to-r from-amber-400 to-amber-500 shadow-lg">
+    <nav className="flex justify-left items-center px-6 py-4 border-b-2 border-amber-500 bg-gradient-to-r from-amber-400 to-amber-500 shadow-lg">
       <Link to="/" className="flex items-center space-x-2 text-white font-bold text-xl hover:text-amber-100 transition-colors">
         <FaBook className="text-2xl" />
         <span>Khatabook</span>
       </Link>
 
-      <div className="flex items-center space-x-6">
+      <div className="flex items-center ml-auto space-x-6">
         {!isLoggedIn ? (
           <>
             <Link
