@@ -10,6 +10,14 @@ function Home() {
  
   // For now, we'll use a placeholder shop name. In a real app, you'd decode the JWT token to get user info
   const shopName = "Your Shop"; // This would come from decoded token or API call
+  const requireAuth = (callback) => {
+  if (!token) {
+    alert("Please login to continue");
+    navigate("/login");
+    return;
+  }
+  callback();
+};
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -75,7 +83,8 @@ function Home() {
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Quick Actions</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <button className="flex items-center justify-center space-x-3 bg-amber-500 text-white py-4 px-6 rounded-lg hover:bg-amber-600 transition-colors font-semibold"
-            onClick={() => navigate("/customer")}>
+             onClick={() =>
+    requireAuth(() => navigate("/customer"))>
               
               <FaUsers />
               
