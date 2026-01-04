@@ -85,7 +85,7 @@ function Home() {
             <button className="flex items-center justify-center space-x-3 bg-amber-500 text-white py-4 px-6 rounded-lg hover:bg-amber-600 transition-colors font-semibold"
              onClick={() =>
     requireAuth(() => navigate("/customer"))>
-              
+               }
               <FaUsers />
               
               <span>Add New Customer</span>
